@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YOOW - Home</title>
+    <title>YOOW - Northeast Inspired Fashion</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -38,6 +38,7 @@
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 15px;
         }
         
         /* Header Styles */
@@ -86,6 +87,10 @@
         }
         
         nav a:hover {
+            color: var(--secondary);
+        }
+        
+        nav a.active {
             color: var(--secondary);
         }
         
@@ -382,7 +387,7 @@
             <div class="logo">YO<span>OW</span></div>
             <nav>
                 <a href="index.html" class="active">Home</a>
-                <a href="products.html">Product Catalog</a>
+                <a href="#products">Product Catalog</a>
                 <a href="#">Collections</a>
                 <a href="#">About</a>
                 <a href="#">Contact</a>
@@ -435,8 +440,87 @@
         </div>
     </section>
 
+    <section id="products" class="product-catalog">
+        <div class="container">
+            <h2 class="section-title">Our Collection</h2>
+            <div class="products-container">
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80');"></div>
+                    <div class="product-info">
+                        <h3>Mekhala Silk Set</h3>
+                        <p>Traditional Assamese silk with modern design</p>
+                        <div class="product-meta">
+                            <span class="price">₹5,499</span>
+                            <a href="https://wa.me/1234567890?text=I%20want%20to%20buy%20Mekhala%20Silk%20Set" class="whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80');"></div>
+                    <div class="product-info">
+                        <h3>Naga Shawl</h3>
+                        <p>Handwoven tribal shawl from Nagaland</p>
+                        <div class="product-meta">
+                            <span class="price">₹3,299</span>
+                            <a href="https://wa.me/1234567890?text=I%20want%20to%20buy%20Naga%20Shawl" class="whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1581044777550-4cfa60707c03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80');"></div>
+                    <div class="product-info">
+                        <h3>Manipur Pottery Earrings</h3>
+                        <p>Handcrafted terracotta jewelry</p>
+                        <div class="product-meta">
+                            <span class="price">₹1,199</span>
+                            <a href="https://wa.me/1234567890?text=I%20want%20to%20buy%20Manipur%20Pottery%20Earrings" class="whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1072&q=80');"></div>
+                    <div class="product-info">
+                        <h3>Mizo Handbag</h3>
+                        <p>Traditional cane and fabric handbag</p>
+                        <div class="product-meta">
+                            <span class="price">₹2,899</span>
+                            <a href="https://wa.me/1234567890?text=I%20want%20to%20buy%20Mizo%20Handbag" class="whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i> Order
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <div class="social-links">
                 <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="copyright">© 2025 YOOW - Echoes from the Hills. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript for product catalog -->
+    <script>
+        // This would normally be in js/script.js
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("Product catalog script loaded");
+        });
+    </script>
+</body>
+</html>

@@ -1,1 +1,32 @@
 
+[
+    {
+        "id": 1,
+        "name": "Traditional Dress A",
+        "image": "images/product1.jpg",
+        "price": 1200,
+        "tag": "New"
+    },
+    {
+        "id": 2,
+        "name": "Handwoven Shawl B",
+        "image": "images/product2.jpg",
+        "price": 950,
+        "tag": "Trending"
+    },
+    {
+        "id": 3,
+        "name": "Modern Fusion Top C",
+        "image": "images/product3.jpg",
+        "price": 1500,
+        "tag": "New"
+    },
+    ...
+    {
+        "id": 20,
+        "name": "Accessory T",
+        "image": "images/product20.jpg",
+        "price": 450,
+        "tag": "Trending"
+    }
+]

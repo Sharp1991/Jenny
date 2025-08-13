@@ -3,67 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yoow - Handmade Local Treasures</title>
+    <title>YOOW - Echoes of the Hills | Northeast Fashion</title>
+    <meta name="description" content="Fashion inspired by Northeast India">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #6A5ACD; /* Slate blue */
-            --secondary: #FF6B6B; /* Coral */
-            --accent: #4ECDC4; /* Turquoise */
-            --light: #F7F9FC;
-            --dark: #2E4057;
-            --text: #333333;
-            --highlight: #FFD166; /* Yellow */
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+        }
+        
+        :root {
+            --primary: #1a2a6c;
+            --secondary: #b21f1f;
+            --accent: #ffd700;
+            --light: #f8f9fa;
+            --dark: #0d1b4a;
+            --text: #333;
+            --gray: #666;
+            --northeast-green: #2e7d32;
+            --northeast-teal: #00897b;
         }
         
         body {
-            background-color: var(--light);
+            background-color: white;
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
         }
         
         /* Header Styles */
         header {
-            background: linear-gradient(135deg, var(--primary), var(--dark));
-            color: white;
-            padding: 1rem 0;
+            background: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            z-index: 1000;
         }
         
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
-        .logo {
+        /* Elegant Logo */
+        .logo-container {
             display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.8rem;
+            flex-direction: column;
+            padding: 10px 0;
+        }
+        
+        .logo-main {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
             font-weight: 700;
-            color: white;
-            text-decoration: none;
+            color: black;
+            letter-spacing: 1px;
+            line-height: 1;
         }
         
-        .logo i {
-            color: var(--highlight);
+        .logo-tagline {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: black;
+            margin-top: 5px;
+            text-align: center;
+            font-weight: 500;
         }
         
+        /* Navigation */
         nav ul {
             display: flex;
             list-style: none;
@@ -71,317 +92,353 @@
         }
         
         nav a {
-            color: white;
+            color: var(--primary);
             text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
+            font-weight: 600;
+            font-size: 18px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
             position: relative;
-            padding: 5px 0;
+        }
+        
+        nav a:hover {
+            color: var(--secondary);
+        }
+        
+        nav a.active {
+            color: var(--secondary);
         }
         
         nav a::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -5px;
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--highlight);
+            background-color: var(--accent);
             transition: width 0.3s ease;
         }
         
-        nav a:hover::after,
-        nav a.active::after {
+        nav a:hover::after {
             width: 100%;
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(46, 64, 87, 0.8), rgba(46, 64, 87, 0.9)), url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('https://images.unsplash.com/photo-1593696140826-c58b021acf8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 6rem 2rem;
             position: relative;
+            animation: fadeIn 1.5s ease;
         }
         
         .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
             position: relative;
             z-index: 2;
+            color: white;
+            max-width: 800px;
+            padding: 0 20px;
         }
         
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            animation: slideDown 1s ease;
         }
         
         .hero p {
             font-size: 1.4rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
+            margin-bottom: 30px;
+            animation: slideUp 1s ease;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
         
         .btn {
             display: inline-block;
-            padding: 14px 35px;
-            background: var(--secondary);
+            background: linear-gradient(to right, var(--primary), var(--dark));
             color: white;
+            padding: 14px 35px;
+            border-radius: 30px;
             text-decoration: none;
-            border-radius: 50px;
             font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .btn:hover {
-            background: #ff5252;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to right, #2a3b7c, #1e2c64);
         }
         
-        /* About Section */
-        .about {
-            padding: 5rem 2rem;
-            background: white;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+        /* Categories Section */
+        .categories {
+            padding: 100px 0;
+            background-color: white;
+            position: relative;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .section-title h2 {
+            margin-bottom: 50px;
+            color: var(--primary);
             font-size: 2.5rem;
-            color: var(--dark);
             position: relative;
-            display: inline-block;
-            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
         }
         
-        .section-title h2::after {
+        .section-title::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: var(--accent);
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
         }
         
-        .about-content {
-            display: flex;
-            gap: 50px;
-            align-items: center;
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
         }
         
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-text h3 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-        
-        .about-image {
-            flex: 1;
+        .category-card {
+            background: white;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
         
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
         
-        /* Products Section */
-        .products {
-            padding: 5rem 2rem;
-            background: linear-gradient(to bottom, #f0f4f8, #e6ecf2);
+        .category-img {
+            height: 280px;
+            background-size: cover;
+            background-position: center;
         }
         
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 2rem;
+        .category-content {
+            padding: 30px;
+            text-align: center;
         }
         
-        .product-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
+        .category-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .category-content p {
+            color: var(--gray);
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+        
+        .highlight {
+            background: linear-gradient(to right, var(--accent), #ffc107);
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        /* Featured Influencers */
+        .influencers {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #f0f7ff, #e1ecff);
             position: relative;
         }
         
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-        
-        .product-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: var(--secondary);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            z-index: 2;
-        }
-        
-        .product-image {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            display: block;
-        }
-        
-        .product-info {
-            padding: 1.8rem;
-        }
-        
-        .merchant-info {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-        
-        .merchant-avatar {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--accent);
-        }
-        
-        .merchant-name {
-            font-weight: 600;
-            color: var(--dark);
-            font-size: 0.95rem;
-        }
-        
-        .product-name {
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-        
-        .product-price {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: var(--secondary);
-            margin: 0.5rem 0 1rem;
-        }
-        
-        .product-description {
-            color: #666;
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-        }
-        
-        .whatsapp-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            padding: 12px;
-            background-color: #25D366;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
-            transition: background 0.3s ease;
-        }
-        
-        .whatsapp-btn:hover {
-            background-color: #128C7E;
-        }
-        
-        /* Values Section */
-        .values {
-            padding: 5rem 2rem;
-            background: white;
-        }
-        
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 2rem;
-        }
-        
-        .value-card {
-            background: var(--light);
-            padding: 2.5rem 1.5rem;
-            border-radius: 10px;
-            text-align: center;
-            transition: all 0.3s;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-        
-        .value-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            border-color: var(--accent);
-        }
-        
-        .value-icon {
-            font-size: 3.5rem;
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-        }
-        
-        .value-card h3 {
-            font-size: 1.5rem;
-            color: var(--dark);
-            margin-bottom: 1rem;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 4rem 0 2rem;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .influencer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
         }
         
-        .footer-column h3 {
+        .influencer-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.4s ease;
+            position: relative;
+        }
+        
+        .influencer-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .influencer-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .influencer-info {
+            padding: 25px 20px;
+        }
+        
+        .influencer-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .influencer-info p {
+            color: var(--gray);
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f0f7ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(26, 42, 108, 0.1);
+        }
+        
+        .social-icon:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        /* Featured Products */
+        .products {
+            padding: 100px 0;
+            background-color: white;
+            position: relative;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 35px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.4s ease;
+            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-img {
+            height: 320px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .product-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--secondary);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .product-info {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .product-info h3 {
+            font-family: 'Playfair Display', serif;
             font-size: 1.4rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .product-info p {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .product-price {
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 80px 0 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .footer-column h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            margin-bottom: 25px;
             position: relative;
             padding-bottom: 10px;
         }
@@ -396,113 +453,151 @@
             background: var(--accent);
         }
         
-        .footer-links {
+        .footer-column p {
+            margin-bottom: 20px;
+            opacity: 0.85;
+            line-height: 1.8;
+        }
+        
+        .footer-column ul {
             list-style: none;
         }
         
-        .footer-links li {
-            margin-bottom: 12px;
+        .footer-column ul li {
+            margin-bottom: 15px;
         }
         
-        .footer-links a {
+        .footer-column ul li a {
             color: #ddd;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: all 0.3s ease;
+            display: block;
         }
         
-        .footer-links a:hover {
+        .footer-column ul li a:hover {
             color: var(--accent);
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-link {
-            display: inline-block;
-            width: 42px;
-            height: 42px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-        
-        .social-link:hover {
-            background: var(--accent);
-            transform: translateY(-3px);
+            padding-left: 5px;
         }
         
         .copyright {
             text-align: center;
-            padding-top: 3rem;
-            margin-top: 3rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            font-size: 1rem;
+            opacity: 0.7;
         }
         
-        /* Responsive */
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.3rem;
+            }
+        }
+        
         @media (max-width: 768px) {
-            .header-content {
+            .header-container {
                 flex-direction: column;
-                gap: 15px;
-                text-align: center;
+                gap: 25px;
             }
             
             nav ul {
-                justify-content: center;
                 flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .hero {
+                height: 500px;
             }
             
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
             
             .hero p {
                 font-size: 1.2rem;
             }
             
-            .about-content {
-                flex-direction: column;
+            .section-title {
+                font-size: 2.2rem;
             }
             
-            .section-title h2 {
-                font-size: 2rem;
+            .logo-main {
+                font-size: 36px;
+            }
+            
+            .logo-tagline {
+                font-size: 12px;
+                letter-spacing: 6px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .logo-main {
+                font-size: 32px;
+            }
+            
+            .logo-tagline {
+                font-size: 10px;
+                letter-spacing: 5px;
+            }
+            
+            .btn {
+                padding: 12px 30px;
+                font-size: 16px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header with Logo and Navigation -->
     <header>
-        <div class="header-content">
-            <a href="#" class="logo">
-                <i class="fas fa-hands"></i>
-                <span>Yoow</span>
-            </a>
+        <div class="container header-container">
+            <div class="logo-container">
+                <div class="logo-main">Yoow</div>
+                <div class="logo-tagline">ECHOES FROM THE HILLS</div>
+            </div>
+            
             <nav>
                 <ul>
                     <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#values">Our Values</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#">Traditional</a></li>
+                    <li><a href="#">Northeast Fashions</a></li>
+                    <li><a href="#">Handicrafts</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -511,246 +606,213 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Discover Handmade Treasures</h1>
-            <p>Yoow connects you with unique handmade products from talented local artisans in your community.</p>
-            <a href="#products" class="btn">Shop Local Artisans</a>
+            <h1>Northeast Inspired Elegance</h1>
+            <p>Discover the rich cultural heritage of Northeast India through our exquisite fashion collections</p>
+            <a href="#" class="btn">Explore Collection</a>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- Categories Section -->
+    <section class="categories">
         <div class="container">
-            <div class="section-title">
-                <h2>Our Story</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Bringing Local Artisans to Your Home</h3>
-                    <p>Yoow began as a small community initiative to support local craftspeople who create beautiful handmade products but lacked access to wider markets. Today, we've grown into a thriving marketplace that celebrates local talent and sustainable craftsmanship.</p>
-                    <p>Every product in our collection tells a story - of the artisan who created it, the traditional techniques used, and the local materials sourced sustainably. When you shop with Yoow, you're not just buying a product; you're supporting a local artist and preserving cultural heritage.</p>
-                    <p>We carefully select each merchant based on their commitment to quality, sustainability, and authentic craftsmanship. From handwoven textiles to artisanal ceramics, each piece is created with care and attention to detail.</p>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Local artisan at work">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="products">
-        <div class="container">
-            <div class="section-title">
-                <h2>Handcrafted Treasures</h2>
-                <p>Discover unique creations from our talented local merchants</p>
-            </div>
-            
-            <div class="products-grid">
-                <!-- Product 1 -->
-                <div class="product-card">
-                    <span class="product-badge">Handwoven</span>
-                    <img src="https://images.unsplash.com/photo-1596466596120-2a8e4b5ddd4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Handwoven Tote Bag" class="product-image">
-                    <div class="product-info">
-                        <div class="merchant-info">
-                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Artisan" class="merchant-avatar">
-                            <span class="merchant-name">Sarah's Craft Studio</span>
-                        </div>
-                        <h3 class="product-name">Artisan Tote Bag</h3>
-                        <div class="product-price">$42.99</div>
-                        <p class="product-description">Handwoven cotton tote bag with unique geometric patterns. Perfect for everyday use while supporting sustainable fashion.</p>
-                        <a href="https://wa.me/15551234567?text=Hi%20Yoow!%20I'd%20like%20to%20buy%20the%20Artisan%20Tote%20Bag%20for%20$42.99" class="whatsapp-btn">
-                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
-                        </a>
+            <h2 class="section-title">Our Fashion Collections</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-img" style="background-image: url('https://images.unsplash.com/photo-1627229456423-1a1a7d0d0f8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
+                    <div class="category-content">
+                        <h3>Traditional Attire</h3>
+                        <p>Authentic clothing reflecting the rich cultural heritage of Northeast India. Each piece tells a story of the hills and its people.</p>
+                        <a href="#" class="btn">View Collection</a>
                     </div>
                 </div>
                 
-                <!-- Product 2 -->
-                <div class="product-card">
-                    <span class="product-badge">Handmade</span>
-                    <img src="https://images.unsplash.com/photo-1516726817505-f5ed825624d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ceramic Mug" class="product-image">
-                    <div class="product-info">
-                        <div class="merchant-info">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Artisan" class="merchant-avatar">
-                            <span class="merchant-name">Clay Creations</span>
-                        </div>
-                        <h3 class="product-name">Handcrafted Ceramic Mug</h3>
-                        <div class="product-price">$28.50</div>
-                        <p class="product-description">Beautiful stoneware mug with unique glaze pattern. Microwave and dishwasher safe. Each piece is one-of-a-kind.</p>
-                        <a href="https://wa.me/15551234567?text=Hi%20Yoow!%20I'd%20like%20to%20buy%20the%20Ceramic%20Mug%20for%20$28.50" class="whatsapp-btn">
-                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
-                        </a>
+                <div class="category-card">
+                    <div class="category-img" style="background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=720&q=80');"></div>
+                    <div class="category-content">
+                        <h3>Modern Fusion</h3>
+                        <p>Trendsetting styles curated by Northeast designers. <span class="highlight">Featured collection</span> blending modern aesthetics with cultural elements.</p>
+                        <a href="#" class="btn">Explore Trends</a>
                     </div>
                 </div>
                 
-                <!-- Product 3 -->
-                <div class="product-card">
-                    <span class="product-badge">Natural Dyes</span>
-                    <img src="https://images.unsplash.com/photo-1534214526114-0ea4d47b04f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Scarf" class="product-image">
-                    <div class="product-info">
-                        <div class="merchant-info">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Artisan" class="merchant-avatar">
-                            <span class="merchant-name">Weave & Dye Co.</span>
-                        </div>
-                        <h3 class="product-name">Silk Scarf with Natural Dyes</h3>
-                        <div class="product-price">$65.00</div>
-                        <p class="product-description">Luxurious silk scarf hand-dyed using traditional techniques with natural plant-based dyes. Lightweight and elegant.</p>
-                        <a href="https://wa.me/15551234567?text=Hi%20Yoow!%20I'd%20like%20to%20buy%20the%20Silk%20Scarf%20for%20$65.00" class="whatsapp-btn">
-                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Product 4 -->
-                <div class="product-card">
-                    <span class="product-badge">Woodwork</span>
-                    <img src="https://images.unsplash.com/photo-1604594849809-dfedbc827105?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Wooden Bowl" class="product-image">
-                    <div class="product-info">
-                        <div class="merchant-info">
-                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Artisan" class="merchant-avatar">
-                            <span class="merchant-name">Timber Crafts</span>
-                        </div>
-                        <h3 class="product-name">Hand-turned Walnut Bowl</h3>
-                        <div class="product-price">$89.99</div>
-                        <p class="product-description">Exquisite wooden bowl crafted from sustainably sourced walnut. Food-safe finish, perfect for fruits or display.</p>
-                        <a href="https://wa.me/15551234567?text=Hi%20Yoow!%20I'd%20like%20to%20buy%20the%20Walnut%20Bowl%20for%20$89.99" class="whatsapp-btn">
-                            <i class="fab fa-whatsapp"></i> Order via WhatsApp
-                        </a>
+                <div class="category-card">
+                    <div class="category-img" style="background-image: url('https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
+                    <div class="category-content">
+                        <h3>Handwoven Textiles</h3>
+                        <p>Exquisite fabrics handcrafted by skilled artisans from the hills. Each thread embodies the spirit of Northeast craftsmanship.</p>
+                        <a href="#" class="btn">Discover Fabrics</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Values Section -->
-    <section id="values" class="values">
+    <!-- Influencers Section -->
+    <section class="influencers">
         <div class="container">
-            <div class="section-title">
-                <h2>Our Values</h2>
-                <p>Why choose Yoow for your handmade purchases</p>
+            <h2 class="section-title">Featured Fashion Influencers</h2>
+            <div class="influencer-grid">
+                <div class="influencer-card">
+                    <div class="influencer-img" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80');"></div>
+                    <div class="influencer-info">
+                        <h3>Arun Thangjam</h3>
+                        <p>Menswear influencer showcasing contemporary Northeast styles</p>
+                        <div class="social-links">
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="influencer-card">
+                    <div class="influencer-img" style="background-image: url('https://images.unsplash.com/photo-1516726817505-f5ed825624d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80');"></div>
+                    <div class="influencer-info">
+                        <h3>Maya Debbarma</h3>
+                        <p>Traditional fashion advocate promoting indigenous textiles</p>
+                        <div class="social-links">
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="influencer-card">
+                    <div class="influencer-img" style="background-image: url('https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80');"></div>
+                    <div class="influencer-info">
+                        <h3>Priya Baruah</h3>
+                        <p>Fusion fashion expert blending traditional and modern styles</p>
+                        <div class="social-links">
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="influencer-card">
+                    <div class="influencer-img" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80');"></div>
+                    <div class="influencer-info">
+                        <h3>Rina Chakma</h3>
+                        <p>Sustainable fashion advocate and textile artist</p>
+                        <div class="social-links">
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-hands-helping"></i>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="products">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80');">
+                        <span class="product-tag">New</span>
                     </div>
-                    <h3>Support Local</h3>
-                    <p>Every purchase directly supports local artisans and their families, helping to preserve traditional crafts.</p>
+                    <div class="product-info">
+                        <h3>Mekhala Silk Set</h3>
+                        <p>Traditional Assamese silk with modern design</p>
+                        <span class="product-price">₹5,499</span>
+                        <a href="#" class="btn">Shop Now</a>
+                    </div>
                 </div>
                 
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-leaf"></i>
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80');">
+                        <span class="product-tag">Popular</span>
                     </div>
-                    <h3>Sustainable</h3>
-                    <p>We prioritize eco-friendly materials and processes to minimize our environmental impact.</p>
+                    <div class="product-info">
+                        <h3>Naga Shawl</h3>
+                        <p>Handwoven tribal shawl from Nagaland</p>
+                        <span class="product-price">₹3,299</span>
+                        <a href="#" class="btn">Shop Now</a>
+                    </div>
                 </div>
                 
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-star"></i>
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1581044777550-4cfa60707c03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80');">
+                        <span class="product-tag">Limited</span>
                     </div>
-                    <h3>Quality Craftsmanship</h3>
-                    <p>Each product is carefully handcrafted with attention to detail and quality materials.</p>
+                    <div class="product-info">
+                        <h3>Manipur Pottery Earrings</h3>
+                        <p>Handcrafted terracotta jewelry</p>
+                        <span class="product-price">₹1,199</span>
+                        <a href="#" class="btn">Shop Now</a>
+                    </div>
                 </div>
                 
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="fas fa-heart"></i>
+                <div class="product-card">
+                    <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1072&q=80');">
+                        <span class="product-tag">Sale</span>
                     </div>
-                    <h3>Unique Pieces</h3>
-                    <p>Discover one-of-a-kind items that tell a story and add character to your home and wardrobe.</p>
+                    <div class="product-info">
+                        <h3>Mizo Handbag</h3>
+                        <p>Traditional cane and fabric handbag</p>
+                        <span class="product-price">₹2,899</span>
+                        <a href="#" class="btn">Shop Now</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3>About Yoow</h3>
-                <p>Yoow connects you with the finest handmade products from talented local artisans. We're passionate about supporting local craftsmanship and sustainable practices.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>About YOOW</h3>
+                    <p>YOOW celebrates the rich cultural heritage of Northeast India through contemporary fashion that honors traditional craftsmanship.</p>
+                    <p>Each piece tells a story of the hills and its people.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Collections</a></li>
+                        <li><a href="#">Traditional Wear</a></li>
+                        <li><a href="#">Modern Fusion</a></li>
+                        <li><a href="#">Handicrafts</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Customer Care</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Guwahati, Assam, India</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> info@yoowfashion.com</p>
+                    <div class="social-links" style="margin-top: 20px;">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
             </div>
             
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#about">Our Story</a></li>
-                    <li><a href="#values">Our Values</a></li>
-                    <li><a href="#">Become a Merchant</a></li>
-                </ul>
+            <div class="copyright">
+                <p>&copy; 2023 YOOW - Echoes from the Hills. All rights reserved.</p>
             </div>
-            
-            <div class="footer-column">
-                <h3>Contact Us</h3>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>123 Artisan Street, Craftville</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+1 (555) 123-4567</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>+1 (555) 765-4321</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>hello@yoowhandmade.com</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="copyright">
-            <p>&copy; 2023 Yoow Handmade Marketplace. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        
-        // Highlight active navigation item on scroll
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('nav a');
-            
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if(pageYOffset >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if(link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
 </body>
 </html>

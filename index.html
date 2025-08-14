@@ -34,7 +34,18 @@
         nav a:hover::after { width: 100%; }
 
         /* Hero */
-        .hero { background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/background.jpg') no-repeat center/cover; height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; margin-bottom: 60px; }
+        .hero { .hero { 
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url('images/background.jpg') no-repeat center/cover; 
+    background-attachment: scroll; 
+    will-change: transform; 
+    height: 80vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    margin-bottom: 60px; 
+        }}
         .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin-bottom: 20px; color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); }
         .hero p { font-size: 1.2rem; color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
 

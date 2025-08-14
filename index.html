@@ -45,21 +45,73 @@
 
         .product { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.1); max-width: 600px; margin: 0 auto; transition: transform 0.4s ease; }
         .product:hover { transform: translateY(-10px); }
-        .product-img { height: 400px; background: url('images/featuredby.jpeg') center/cover; }
+        .product-img { height: 400px; background: url('https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover; }
         .product-info { padding: 25px; }
         .product-info h3 { font-size: 1.8rem; margin-bottom: 15px; color: var(--primary); }
         .product-info p { color: var(--gray); margin-bottom: 20px; font-size: 1.1rem; }
         .whatsapp-btn { display: inline-block; background: #25D366; color: white; padding: 14px 35px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 18px; transition: all 0.3s ease; }
         .whatsapp-btn:hover { background: #128C7E; transform: translateY(-3px); }
 
-        /* Showcase */
+        /* Showcase - Updated Styles */
         .showcase { padding: 60px 0; background: linear-gradient(to bottom, #f0f7ff, #e1ecff); }
-        .showcase-items { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .item { border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08); height: 300px; position: relative; transition: transform 0.3s ease; }
-        .item:hover { transform: scale(1.03); }
-        .item-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white; opacity: 0; transition: opacity 0.3s ease; }
-        .item:hover .item-overlay { opacity: 1; }
-
+        .showcase-items { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        .artisan-card { 
+            background: white; 
+            border-radius: 15px; 
+            overflow: hidden; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        .artisan-card:hover { 
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .artisan-image {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .artisan-info {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .artisan-info h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .artisan-info .craft {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+            font-size: 1.1rem;
+        }
+        
+        .artisan-info p {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        .artisan-region {
+            display: inline-block;
+            background: rgba(26, 42, 108, 0.1);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
         /* Footer */
         footer { background: linear-gradient(135deg, var(--primary), var(--dark)); color: white; padding: 40px 0 20px; text-align: center; }
         .social-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; }
@@ -75,8 +127,19 @@
         .delay-3 { animation-delay: 0.6s; }
 
         /* Responsive */
-        @media (max-width:768px) { .header-container { flex-direction: column; gap: 20px; } nav { flex-wrap: wrap; justify-content: center; } .hero h1 { font-size: 2.5rem; } .hero p { font-size: 1.1rem; } .product-img { height: 300px; } }
-        @media (max-width:576px) { .hero { height: 60vh; } .hero h1 { font-size: 2rem; } .section-title { font-size: 1.8rem; } .whatsapp-btn { padding: 12px 25px; font-size: 16px; } }
+        @media (max-width:768px) { 
+            .header-container { flex-direction: column; gap: 20px; } 
+            nav { flex-wrap: wrap; justify-content: center; } 
+            .hero h1 { font-size: 2.5rem; } 
+            .hero p { font-size: 1.1rem; } 
+            .product-img { height: 300px; } 
+        }
+        @media (max-width:576px) { 
+            .hero { height: 60vh; } 
+            .hero h1 { font-size: 2rem; } 
+            .section-title { font-size: 1.8rem; } 
+            .whatsapp-btn { padding: 12px 25px; font-size: 16px; } 
+        }
     </style>
 </head>
 <body>
@@ -85,7 +148,7 @@
             <div class="logo">YO<span>OW</span></div>
             <nav>
                 <a href="index.html" class="active">Home</a>
-                <a href="products.html">Product Catalog</a> <!-- links to second page -->
+                <a href="products.html">Product Catalog</a>
                 <a href="#">Collections</a>
                 <a href="#">About</a>
                 <a href="#">Contact</a>
@@ -106,10 +169,8 @@
             <div class="product-img"></div>
             <div class="product-info">
                 <h3>Meghalaya State Rural Livelihood Society</h3>
-                <p>Handcrafted terracotta jewelry inspired by traditional Manipuri pottery techniques. Each piece is unique and reflects the artistry of Northeast India.</p>
-                <a href="https://wa.me/1234567890?text=I%20want%20to%20buy%20Manipur%20Pottery%20Earrings" class="whatsapp-btn">
-                    <i class="fab fa-whatsapp"></i>Order on WhatsApp
-                </a>
+                <p>Discover the beauty of Northeast India through handmade crafts, each piece reflecting generations of tradition, skill, and cultural heritage. Perfectly blending artistry with authenticity, these creations support local artisans and celebrate their timeless craftsmanship.</p>
+                <a href="#" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Shop Collection</a>
             </div>
         </div>
     </section>
@@ -117,22 +178,36 @@
     <section class="showcase">
         <h2 class="section-title">Artisan Showcase</h2>
         <div class="showcase-items">
-            <div class="item animated delay-1">
-                <div class="item-overlay">
-                    <h3>Traditional Weaves</h3>
-                    <p>Handwoven textiles from Assam</p>
+            <!-- Artisan 1 -->
+            <div class="artisan-card animated delay-1">
+                <div class="artisan-image" style="background-image: url('https://images.unsplash.com/photo-1582538885592-e70a5d7ab3d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+                <div class="artisan-info">
+                    <h3>Jenny Michelle Wankhar</h3>
+                    <span class="craft">Handwoven Textiles</span>
+                    <p>From the lush hills of Assam, Jenny carries forward her family's 4-generation legacy in Eri silk weaving. Her intricate designs incorporate motifs from tribal folklore, each piece taking 2-3 weeks to complete using traditional looms.</p>
+                    <span class="artisan-region">Assam, Northeast India</span>
                 </div>
             </div>
-            <div class="item animated delay-2">
-                <div class="item-overlay">
-                    <h3>Modern Fusion</h3>
-                    <p>Contemporary designs with traditional elements</p>
+            
+            <!-- Artisan 2 -->
+            <div class="artisan-card animated delay-2">
+                <div class="artisan-image" style="background-image: url('https://images.unsplash.com/photo-1520006403909-838d6b92c22e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+                <div class="artisan-info">
+                    <h3>Arunima Debbarma</h3>
+                    <span class="craft">Modern Fusion Designs</span>
+                    <p>Arunima blends traditional Tripura weaving techniques with contemporary silhouettes. Her innovative approach preserves cultural heritage while appealing to modern tastes, using natural dyes and organic cotton from local farms.</p>
+                    <span class="artisan-region">Tripura, Northeast India</span>
                 </div>
             </div>
-            <div class="item animated delay-3">
-                <div class="item-overlay">
-                    <h3>Tribal Jewelry</h3>
-                    <p>Authentic Northeast craftsmanship</p>
+            
+            <!-- Artisan 3 -->
+            <div class="artisan-card animated delay-3">
+                <div class="artisan-image" style="background-image: url('https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+                <div class="artisan-info">
+                    <h3>Lalremruati Ralte</h3>
+                    <span class="craft">Tribal Jewelry</span>
+                    <p>From the Mizo hills, Lalremruati creates stunning jewelry using ancient techniques passed down through her tribe. Her pieces incorporate locally sourced materials like bamboo, seeds, and ethically mined stones.</p>
+                    <span class="artisan-region">Mizoram, Northeast India</span>
                 </div>
             </div>
         </div>
@@ -152,7 +227,26 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            console.log("Product catalog script loaded");
+            console.log("Artisan showcase enhanced");
+            
+            // Add animation on scroll
+            const cards = document.querySelectorAll('.artisan-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            cards.forEach(card => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
         });
     </script>
 </body>

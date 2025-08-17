@@ -1,34 +1,90 @@
 [
   {
     "id": 1,
-    "name": "Mekhala Silk Set",
-    "description": "Traditional Assamese silk with modern design",
-    "price": "₹5,499",
-    "image": "images/product1.jpg",
-    "category": "Traditional"
+    "name": "Handbag 1",
+    "description": "Elegant handcrafted handbag perfect for daily use.",
+    "price": "₹1,499",
+    "image": "https://i.imgur.com/1xhXEaj.jpeg",
+    "category": "Handbags"
   },
   {
     "id": 2,
-    "name": "Naga Shawl",
-    "description": "Handwoven tribal shawl from Nagaland",
-    "price": "₹3,299",
-    "image": "images/product2.jpg",
-    "category": "Traditional"
+    "name": "Handbag 2",
+    "description": "Stylish handbag with premium finish for modern outings.",
+    "price": "₹1,599",
+    "image": "https://i.imgur.com/y8bwPny.jpeg",
+    "category": "Handbags"
   },
   {
     "id": 3,
-    "name": "Manipur Pottery Earrings",
-    "description": "Handcrafted terracotta jewelry",
-    "price": "₹1,199",
-    "image": "images/product3.jpg",
-    "category": "Accessories"
+    "name": "Handbag 3",
+    "description": "Compact handbag with sleek design and durable material.",
+    "price": "₹1,699",
+    "image": "https://i.imgur.com/0F9Hb52.jpeg",
+    "category": "Handbags"
   },
   {
     "id": 4,
-    "name": "Mizo Handbag",
-    "description": "Traditional cane and fabric handbag",
-    "price": "₹2,899",
-    "image": "images/product4.jpg",
-    "category": "Accessories"
+    "name": "Handbag 4",
+    "description": "Chic handbag for both casual and formal occasions.",
+    "price": "₹1,799",
+    "image": "https://i.imgur.com/WnMQ9YZ.jpeg",
+    "category": "Handbags"
+  },
+  {
+    "id": 5,
+    "name": "Handbag 5",
+    "description": "Handcrafted with attention to detail and style.",
+    "price": "₹1,899",
+    "image": "https://i.imgur.com/mcUtIrW.jpeg",
+    "category": "Handbags"
+  },
+  {
+    "id": 6,
+    "name": "Handbag 6",
+    "description": "Spacious handbag suitable for everyday essentials.",
+    "price": "₹1,999",
+    "image": "https://i.imgur.com/OZCUyOp.jpeg",
+    "category": "Handbags"
+  },
+  {
+    "id": 7,
+    "name": "Handbag 7",
+    "description": "Modern handbag crafted from premium material.",
+    "price": "₹2,099",
+    "image": "https://i.imgur.com/6cu8uEW.jpeg",
+    "category": "Handbags"
+  },
+  {
+    "id": 8,
+    "name": "Handbag 8",
+    "description": "Stylish and practical handbag for everyday wear.",
+    "price": "₹2,199",
+    "image": "https://i.imgur.com/0JXSgMr.jpeg",
+    "category": "Handbags"
+  },
+  {
+    "id": 9,
+    "name": "Handbag 9",
+    "description": "Elegant design with durable stitching for long use.",
+    "price": "₹2,299",
+    "image": "https://i.imgur.com/dlQqaEj.jpeg",
+    "category": "Handbags"
+  },
+  {
+    "id": 10,
+    "name": "Handbag 10",
+    "description": "Premium handbag with trendy design and versatility.",
+    "price": "₹2,399",
+    "image": "https://i.imgur.com/kYFxAVY.jpeg",
+    "category": "Handbags"
+  },
+  {
+    "id": 11,
+    "name": "Handbag 11",
+    "description": "Handmade handbag perfect for gifting or daily use.",
+    "price": "₹2,499",
+    "image": "https://i.imgur.com/H0Ji40X.jpeg",
+    "category": "Handbags"
   }
 ]

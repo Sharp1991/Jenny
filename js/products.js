@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Fetch products from JSON file in parent folder
-    fetch('../products.json')
+    // Fetch products from GitHub raw URL
+    fetch('https://raw.githubusercontent.com/Sharp1991/Jenny/main/products.json')
         .then(response => response.json())
         .then(products => {
             const container = document.getElementById('products-container');

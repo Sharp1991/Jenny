@@ -1,4 +1,13 @@
+/* Hero Section Styles */
+.hero-content h1 {
+    color: #ffffff; /* White text */
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7); /* Adds shadow for clarity */
+}
 
+.hero-content p {
+    color: #f0f0f0; /* Lighter paragraph */
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
 /* products.css - Product Catalog Specific Styles */
 .product-catalog {
     padding: 60px 0;

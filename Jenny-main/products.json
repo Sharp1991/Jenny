@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Mekhala Silk Set",
+    "description": "Traditional Assamese silk with modern design",
+    "price": "₹5,499",
+    "image": "images/product1.jpg",
+    "category": "Traditional"
+  },
+  {
+    "id": 2,
+    "name": "Naga Shawl",
+    "description": "Handwoven tribal shawl from Nagaland",
+    "price": "₹3,299",
+    "image": "images/product2.jpg",
+    "category": "Traditional"
+  },
+  {
+    "id": 3,
+    "name": "Manipur Pottery Earrings",
+    "description": "Handcrafted terracotta jewelry",
+    "price": "₹1,199",
+    "image": "images/product3.jpg",
+    "category": "Accessories"
+  },
+  {
+    "id": 4,
+    "name": "Mizo Handbag",
+    "description": "Traditional cane and fabric handbag",
+    "price": "₹2,899",
+    "image": "images/product4.jpg",
+    "category": "Accessories"
+  }
+]

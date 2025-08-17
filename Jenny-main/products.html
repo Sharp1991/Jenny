@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOOW - Product Catalog</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">YO<span>OW</span></div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="products.html" class="active">Product Catalog</a>
+                <a href="#">Collections</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="product-catalog container">
+        <h1>Our Collection</h1>
+        <div class="products-container" id="products-container">
+            <!-- Products will be dynamically loaded here -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="copyright">© 2025 YOOW - Echoes from the Hills. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const products = [
+            {
+                name: "Drop Texture Handmade Combo Ceramic Planters",
+description: "A beautifully crafted combo of ceramic planters with a unique drop-textured finish, perfect for adding elegance to your indoor and outdoor spaces.",
+price: "₹1,000",
+image: "https://raw.githubusercontent.com/Sharp1991/Jenny/main/images/pot.jpeg",
+whatsapp: "https://wa.me/1234567890?text=I%20want%20to%20buy%20Drop%20Texture%20Handmade%20Combo%20Ceramic%20Planters"
+            },
+            {
+                name: "Naga Shawl",
+                description: "Handwoven tribal shawl from Nagaland",
+                price: "₹3,299",
+                image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&auto=format&fit=crop&w=736&q=80",
+                whatsapp: "https://wa.me/1234567890?text=I%20want%20to%20buy%20Naga%20Shawl"
+            },
+            {
+                name: "Manipur Pottery Earrings",
+                description: "Handcrafted terracotta jewelry",
+                price: "₹1,199",
+                image: "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?ixlib=rb-4.0.3&auto=format&fit=crop&w=686&q=80",
+                whatsapp: "https://wa.me/1234567890?text=I%20want%20to%20buy%20Manipur%20Pottery%20Earrings"
+            },
+            {
+                name: "Mizo Handbag",
+                description: "Traditional cane and fabric handbag",
+                price: "₹2,899",
+                image: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-4.0.3&auto=format&fit=crop&w=1072&q=80",
+                whatsapp: "https://wa.me/1234567890?text=I%20want%20to%20buy%20Mizo%20Handbag"
+            }
+        ];
+
+        const container = document.getElementById('products-container');
+
+        products.forEach(product => {
+            const card = document.createElement('div');
+            card.classList.add('product-card');
+            card.innerHTML = `
+                <div class="product-image" style="background-image: url('${product.image}')"></div>
+                <div class="product-info">
+                    <h3>${product.name}</h3>
+                    <p>${product.description}</p>
+                    <div class="product-meta">
+                        <span class="price">${product.price}</span>
+                        <a href="${product.whatsapp}" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Order
+                        </a>
+                    </div>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>
